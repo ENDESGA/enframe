@@ -1,0 +1,20 @@
+﻿cmake_minimum_required(VERSION 3.10)
+
+set(CMAKE_C_STANDARD 99)
+set(PROJECT_NAME "GPTtest")
+set(SOURCES "src/main.c")
+set(INCLUDE "inc/")
+
+project(${PROJECT_NAME} C)
+
+IF (WIN32)
+    include_directories(${INCLUDE})
+    link_directories(${INCLUDE})
+    add_executable(${PROJECT_NAME} ${SOURCES})
+    target_link_libraries(${PROJECT_NAME} m SDL2 SDL2main opengl32 glew32)
+    set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".exe")
+ELSEIF (UNIX)
+    add_executable(${PROJECT_NAME} ${SOURCES})
+    target_link_libraries(${PROJECT_NAME} m SDL2 SDL2main GL GLEW)
+    set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".bin")
+ENDIF ()
