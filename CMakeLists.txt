@@ -5,7 +5,7 @@ set(CMAKE_SUPPRESS_REGENERATION TRUE)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -march=native")
 set(PROJECT_NAME "hept" CACHE STRING "PROJECT_NAME")
-set(SOURCES "src/cc.h" "src/hept.h" "src/main.c" CACHE FILEPATH "SOURCES")
+set(SOURCES "src/main.c" CACHE FILEPATH "SOURCES")
 set(INCLUDE "inc/" CACHE PATH "INCLUDE")
 
 project(${PROJECT_NAME} C)
