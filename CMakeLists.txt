@@ -1,11 +1,12 @@
-﻿cmake_minimum_required(VERSION 3.10)
+﻿cmake_minimum_required(VERSION 3.20)
 
 set(CMAKE_SUPPRESS_REGENERATION TRUE)
 
 set(CMAKE_C_STANDARD 99)
-set(PROJECT_NAME "enframe" CACHE STRING "PROJECT_NAME")
-set(SOURCES "src/main.c" CACHE STRING "SOURCES")
-set(INCLUDE "inc/")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -march=native")
+set(PROJECT_NAME "hept" CACHE STRING "PROJECT_NAME")
+set(SOURCES "src/cc.h" "src/hept.h" "src/main.c" CACHE FILEPATH "SOURCES")
+set(INCLUDE "inc/" CACHE PATH "INCLUDE")
 
 project(${PROJECT_NAME} C)
 
